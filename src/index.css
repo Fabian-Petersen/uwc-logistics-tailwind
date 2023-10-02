@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sidebar-width: 20rem;
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .main-content-size {
+    width: calc(100% - var(--sidebar-width));
+  }
+
+  .sidebarWidth {
+    width: var(--sidebar-width);
+  }
+
+  .section {
+    @apply h-screen bg-bg_dark px-2 py-6;
+  }
+}
+
+@layer components {
+  .formInput {
+    @apply p-2 rounded-lg outline-none border-none focus:border-sky-500 focus:border invalid:text-red-500;
+  }
+
+  .btn {
+    @apply text-white text-xl bg-blue-500 p-2 w-full md:text-xl rounded-lg;
+  }
+
+  /* ! Sidebar Menu */
+  .openSidebar {
+    @apply translate-x-0 opacity-100 transition-transform duration-300 ease-in-out;
+  }
+
+  .closeSidebar {
+    @apply -translate-x-full transition-transform duration-300 ease-in-out hidden;
+  }
+
+  .active:not(.submenu_link) {
+    @apply text-[#8a69ff] text-xl;
+  }
+
+  .sidebarBtn {
+    @apply absolute right-[2%] hover:text-gray-300 transition-colors duration-500;
+  }
+
+  /* Dashboard Card Container Styles  */
+
+  .card {
+    @apply relative flex flex-col gap-6 justify-around w-[12rem] h-[8rem] p-4 text-white outline-none border-none rounded-md bg-bg_card;
+  }
+}

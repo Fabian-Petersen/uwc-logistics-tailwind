@@ -1,0 +1,43 @@
+import {
+  faXmark,
+  faHouse,
+  faUser,
+  faClipboard,
+  faMoon,
+  faCab,
+  faAreaChart,
+  faBars,
+  faPen,
+  faReceipt,
+  faWrench,
+  faChevronRight,
+  faChevronLeft,
+  faUsers,
+  faEllipsisVertical,
+  faChevronCircleLeft,
+  faRightFromBracket,
+  faWarning,
+} from "@fortawesome/free-solid-svg-icons";
+
+export const icons = {
+  house: faHouse,
+  user: faUser,
+  faClipboard,
+  faMoon,
+  faCab,
+  faAreaChart,
+  faXmark,
+  faBars,
+  faPen,
+  faReceipt,
+  faWrench,
+  faChevronRight,
+  faChevronLeft,
+  faUsers,
+  faEllipsisVertical,
+  faChevronCircleLeft,
+  faRightFromBracket,
+  faWarning,
+};
+
+export default icons;
