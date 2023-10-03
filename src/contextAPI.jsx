@@ -115,7 +115,12 @@ const AppProvider = ({ children }) => {
     type: "",
   });
 
-  //$ 16. ====== Vehicle Modal Component - State to open and close the modal to add a new vehicle  ====== //
+  //$ 16. ====== Light and Dark Mode  ====== //
+  const [theme, setTheme] = useState(
+    () => JSON.parse(localStorage.getItem("theme")) || false
+  );
+
+  //$ 17. ====== Vehicle Modal Component - State to open and close the modal to add a new vehicle  ====== //
   const [openVehicleModal, setOpenVehicleModal] = useState(false);
   // State for the single image uplaod
   const [fileValue, setFileValue] = useState(null);
@@ -178,6 +183,8 @@ const AppProvider = ({ children }) => {
         setOpenBookingTableMenu,
         rowInfo,
         setRowInfo,
+        theme,
+        setTheme,
       }}
     >
       {children}

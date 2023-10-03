@@ -1,7 +1,7 @@
 // React Router Dom
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/features/Sidebar";
-// import Navbar from "./components/features/Navbar";
+import Navbar from "./components/features/Navbar";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -28,6 +28,7 @@ const App = () => {
   return (
     <Router>
       <Sidebar />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="dashboard" element={<Dashboard />} />

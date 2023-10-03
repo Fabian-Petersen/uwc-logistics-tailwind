@@ -19,7 +19,7 @@ const SidebarUserDetails = () => {
           src="./src/assets/images/jurica-koletic.jpg"
           alt="ProfileImage"
         />
-        <h4 className="text-gray-800">
+        <h4 className="text-base-content">
           Hello, <span className="text-primary font-semibold">Fabian</span>
         </h4>
       </div>

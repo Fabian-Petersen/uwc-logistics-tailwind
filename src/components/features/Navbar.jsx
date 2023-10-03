@@ -1,77 +1,47 @@
-import { useGlobalContext } from "../../contextAPI";
-import { useNavigate } from "react-router-dom";
 // import supabase from "../../config/supabaseClient";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import icons from "../../assets/data/icons";
+import { useEffect } from "react";
+import { useGlobalContext } from "../../contextAPI";
 
 const Navbar = () => {
-  const { setUserData, setToken, setLogin, login, token } = useGlobalContext();
-  const navigate = useNavigate();
-  const handleLogin = () => {
-    setToken(true);
-    setLogin(true);
+  //$ Store the user preference in the localstorage to persist the mode on page reloads.
+
+  const handleTheme = () => {
+    const newTheme = theme ? "light" : "dracula";
+    document.documentElement.setAttribute("data-theme", newTheme);
+    setTheme(!theme);
   };
 
-  //? function to handle logging out of the session
-  const handleLogout = async () => {
-    try {
-      // const { error } = await supabase.auth.signOut();
-      setUserData("");
-      setLogin(!login);
-      navigate("/");
-      setToken(false);
-      // if (error) throw error;
-    } catch (error) {
-      console.log(error);
+  const { theme, setTheme } = useGlobalContext();
+  useEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(theme));
+    if (theme) {
+      document.documentElement.classList.add("dracula");
+    } else {
+      document.documentElement.classList.remove("dracula");
     }
-  };
+  }, [theme]);
 
-  const handleSignUp = () => {
-    navigate("/register");
-    setLogin(true);
-  };
-
-  //Define the current location the user is at to style elements accordingly.
-  const location = window.location.pathname;
+  const { faSun, faMoon } = icons;
   return (
-    <ul
-      className={
-        location === "/" ? "navbar w-screen" : "navbar w-full bg-slate-500"
-      }
-    >
-      {token ? (
-        <ul className="flex flex-1 justify-end items-center gap-4">
-          {/* //$ 1. Welcome Text */}
-          <li className="capitalize text-white">
-            Hello,
-            <span> Fabian</span>
-            {/* <span>{token?.user?.user_metadata?.name}</span> */}
-          </li>
-          {/* //$ 2. User Icon */}
-          <Link to="/user">
-            <li className="w-1 h-1 rounded-[50%] flex justify-center items-center relative text-2xl text-primary">
-              <FontAwesomeIcon icon={faUser} />
-            </li>
-          </Link>
-          {/* //$ 3. Logout Button */}
-          <li onClick={handleLogout} className="btn-login">
-            Logout
-          </li>
-        </ul>
-      ) : (
-        <ul className="flex gap-4 flex-1 justify-end items-center">
-          {/* //$ 4. Login Button */}
-          <li onClick={handleLogin} className="btn-login">
-            Login
-          </li>
-          <li onClick={handleSignUp} className="btn-login bg-primary">
-            {/* //$ 5. Signup Button */}
-            sign up
-          </li>
-        </ul>
-      )}
-    </ul>
+    <nav className="flex items-center h-15 bg-base-200 py-4 justify-around">
+      <div className="flex items-center w-20 gap-6 justify-end ml-auto mr-1 px-4">
+        <span
+          onClick={handleTheme}
+          className="relative flex items-center justify-center text-base-content hover:cursor-pointer before:absolute before:border before:border-base-content before:content-[''] before:w-7 before:h-7 before:rounded-full"
+        >
+          {theme ? (
+            <FontAwesomeIcon className="w-3.5 h-3.5" icon={faSun} />
+          ) : (
+            <FontAwesomeIcon className="w-3.5 h-3.5" icon={faMoon} />
+          )}
+        </span>
+        <p className="relative flex items-center justify-center capitalize text-center text-primary font-semibold hover:cursor-pointer before:absolute before:border before:border-base-content before:content-[''] before:w-7 before:h-7 before:rounded-full">
+          FP
+        </p>
+      </div>
+    </nav>
   );
 };
 export default Navbar;

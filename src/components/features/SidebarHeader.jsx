@@ -14,12 +14,12 @@ const SidebarHeader = () => {
   return (
     <>
       <img
-        className="w-24 h-24 mt-2 mx-auto mb-5"
+        className="w-24 h-24 mt-2 mx-auto mb-5 fill-white "
         src="../../src/assets/images/UWC_logo.svg"
         alt="logo"
       />
-      <div className="flex flex-col gap-4 z-10 text-white items-center mb-5">
-        <p className="text-textDark">Department of Transport</p>
+      <div className="flex flex-col gap-4 z-10 text-base-content items-center mb-5">
+        <p className="text-base-content">Department of Transport</p>
       </div>
       <div className="p-4 pb-2 flex justify-between items-center">
         <button className="sidebarBtn top-[1%] p-1" onClick={handleClick}>

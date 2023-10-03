@@ -4,6 +4,7 @@
 
 :root {
   --sidebar-width: 20rem;
+  --navbar-height: 15rem;
 }
 
 @layer base {
@@ -21,8 +22,9 @@
     width: var(--sidebar-width);
   }
 
-  .section {
-    @apply h-screen bg-bg_dark px-2 py-6;
+  /* Substract the heighth of the navbar to avoid a scrollbar from apprearing in fullscreen mode. */
+  .dashboard-height {
+    height: calc(100vh - var(--navbar-height));
   }
 }
 
@@ -45,7 +47,7 @@
   }
 
   .active:not(.submenu_link) {
-    @apply text-[#8a69ff] text-xl;
+    @apply text-warning text-xl;
   }
 
   .sidebarBtn {
@@ -55,6 +57,6 @@
   /* Dashboard Card Container Styles  */
 
   .card {
-    @apply relative flex flex-col gap-6 justify-around w-[12rem] h-[8rem] p-4 text-white outline-none border-none rounded-md bg-bg_card;
+    @apply relative flex flex-col gap-6 justify-around w-[12rem] h-[8rem] p-4 text-base-content outline-none border-none rounded-md bg-base-200;
   }
 }

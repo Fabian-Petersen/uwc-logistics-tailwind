@@ -8,12 +8,12 @@ const CardContainer = () => {
   // const { data: vehicles } = useVehiclesQuery();
 
   return (
-    <div className="flex flex-wrap p-4 justify-evenly">
+    <div className="flex flex-wrap p-4 gap-4">
       {cardData.map((card, index) => {
         const { name, stat, icon } = card;
         return (
-          <div key={index} className="card">
-            <span className="flex justify-center items-center relative before:content-[''] before:p-4 before:absolute before:w-12 before:h-12 before:rounded-full before:border-2 before:border-white">
+          <div key={index} className="card flex-grow">
+            <span className="flex justify-center items-center relative before:content-[''] before:p-4 before:absolute before:w-12 before:h-12 before:rounded-full before:border-2 before:border-base-content">
               <FontAwesomeIcon className="w-6 h-6" icon={icon} />
             </span>
             <div className="flex gap-2 justify-center">

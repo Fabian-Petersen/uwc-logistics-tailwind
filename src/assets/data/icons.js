@@ -3,7 +3,6 @@ import {
   faHouse,
   faUser,
   faClipboard,
-  faMoon,
   faCab,
   faAreaChart,
   faBars,
@@ -17,13 +16,14 @@ import {
   faChevronCircleLeft,
   faRightFromBracket,
   faWarning,
+  faSun,
+  faMoon,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const icons = {
   house: faHouse,
   user: faUser,
   faClipboard,
-  faMoon,
   faCab,
   faAreaChart,
   faXmark,
@@ -38,6 +38,8 @@ export const icons = {
   faChevronCircleLeft,
   faRightFromBracket,
   faWarning,
+  faSun,
+  faMoon,
 };
 
 export default icons;
