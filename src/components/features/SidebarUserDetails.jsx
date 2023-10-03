@@ -12,7 +12,7 @@ const SidebarUserDetails = () => {
   };
 
   return (
-    <div className="flex items-center py-2 mt-auto">
+    <div className="flex items-center py-2 mt-2">
       <div className="flex gap-2 pl-2 items-center">
         <img
           className="w-12 h-12 rounded-[50%] mx-auto border-4 border-primary bg-cover bg-center"
@@ -23,7 +23,11 @@ const SidebarUserDetails = () => {
           Hello, <span className="text-primary font-semibold">Fabian</span>
         </h4>
       </div>
-      <button className="sidebarBtn ml-auto p-1" onClick={handleClick}>
+      <button
+        className="sidebarBtn ml-auto p-1 tooltip tooltip-right"
+        data-tip="Logout"
+        onClick={handleClick}
+      >
         <FontAwesomeIcon className="w-8 h-8" icon={faRightFromBracket} />
       </button>
     </div>

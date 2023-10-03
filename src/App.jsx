@@ -24,11 +24,12 @@ import {
 } from "../src/pages";
 
 const token = [];
+
 const App = () => {
   return (
     <Router>
-      <Sidebar />
-      <Navbar />
+      {/* //$ Use the location hook to not show the sidebar on the home/login page... */}
+      {window.location.pathname !== "/" && <Sidebar /> && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="dashboard" element={<Dashboard />} />

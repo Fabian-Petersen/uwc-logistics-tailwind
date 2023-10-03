@@ -15,8 +15,7 @@ export default {
         bg_card: "#1c2534",
       },
       backgroundImage: {
-        homePageImage:
-          "url(src/assets/images/University_of_the_Western_Cape_-_Central_Campus_entry.jpg)",
+        homePageImage: "url(src/assets/images/UWC-central-campus-entry.jpg)",
       },
     },
   },

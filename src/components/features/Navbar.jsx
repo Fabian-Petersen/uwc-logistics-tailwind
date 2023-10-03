@@ -7,12 +7,6 @@ import { useGlobalContext } from "../../contextAPI";
 const Navbar = () => {
   //$ Store the user preference in the localstorage to persist the mode on page reloads.
 
-  const handleTheme = () => {
-    const newTheme = theme ? "light" : "dracula";
-    document.documentElement.setAttribute("data-theme", newTheme);
-    setTheme(!theme);
-  };
-
   const { theme, setTheme } = useGlobalContext();
   useEffect(() => {
     localStorage.setItem("theme", JSON.stringify(theme));
@@ -23,6 +17,12 @@ const Navbar = () => {
     }
   }, [theme]);
 
+  const handleTheme = () => {
+    const newTheme = theme ? "light" : "dracula";
+    document.documentElement.setAttribute("data-theme", newTheme);
+    setTheme(!theme);
+  };
+
   const { faSun, faMoon } = icons;
   return (
     <nav className="flex items-center h-15 bg-base-200 py-4 justify-around">
@@ -32,7 +32,11 @@ const Navbar = () => {
           className="relative flex items-center justify-center text-base-content hover:cursor-pointer before:absolute before:border before:border-base-content before:content-[''] before:w-7 before:h-7 before:rounded-full"
         >
           {theme ? (
-            <FontAwesomeIcon className="w-3.5 h-3.5" icon={faSun} />
+            <FontAwesomeIcon
+              className="w-3.5 h-3.5"
+              icon={faSun}
+              data-tip="light"
+            />
           ) : (
             <FontAwesomeIcon className="w-3.5 h-3.5" icon={faMoon} />
           )}

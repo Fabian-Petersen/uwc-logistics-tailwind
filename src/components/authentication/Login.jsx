@@ -35,8 +35,8 @@ const Login = () => {
   } = useForm();
 
   return (
-    <form className="flex flex-col justify-end mx-auto w-80 h-96 border border-red-400 bg-gray-600 rounded-xl p-2 gap-y-3">
-      <h2 className="text-white text-3xl mb-auto justify-center mx-auto">
+    <form className="flex flex-col justify-end mx-auto w-80 h-96 bg-neutral rounded-xl p-2 gap-y-3">
+      <h2 className="text-3xl mb-auto justify-center mx-auto text-neutral-content">
         Login
       </h2>
       <img
@@ -64,7 +64,10 @@ const Login = () => {
         register={register}
         errors={errors}
       />
-      <button type="submit" className="btn hover:pointer hover:bg-blue-600">
+      <button
+        type="submit"
+        className="btn hover:pointer hover:bg-blue-600 border-none"
+      >
         Submit
       </button>
     </form>

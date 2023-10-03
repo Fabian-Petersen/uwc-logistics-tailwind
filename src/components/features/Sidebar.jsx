@@ -12,12 +12,12 @@ const Sidebar = () => {
         <SidebarHeader />
         <hr
           className={`w-[95%] text-gray-600 opacity-80 mx-auto mb-4
-            ${theme ? "opacity-10" : "opacity-90"}`}
+            ${theme ? "opacity-20" : "opacity-90"}`}
         />
         <SidebarMenuOpen />
         <hr
-          className={`w-[95%] text-gray-600 opacity-80 mx-auto mt-4 ${
-            theme ? "opacity-10" : "opacity-90"
+          className={`w-[95%] text-gray-600 opacity-80 mx-auto mt-auto ${
+            theme ? "opacity-20" : "opacity-90"
           }`}
         />
         <SidebarUserDetails />
