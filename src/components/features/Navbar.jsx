@@ -35,9 +35,9 @@ const Navbar = () => {
   const { faSun, faMoon } = icons;
   return (
     <nav
-      className={`flex items-center navbar-height py-2.5 justify-around border-b ${
-        theme ? "border-b-gray-600" : "border-b-gray-200"
-      }`}
+      className={`flex items-center navbar-height justify-around ${
+        location.pathname === "/" ? "bg-transparent" : null
+      } ${theme && location.pathname !== "/" ? "border-b-gray-600" : null}`}
     >
       <div className="flex items-center w-40 gap-6 justify-end ml-auto mr-1 px-4 border-1 border-red-500">
         <span

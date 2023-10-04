@@ -39,7 +39,7 @@ const Login = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col justify-end mx-auto w-80 h-96 bg-neutral rounded-xl p-4 gap-y-3"
+      className="flex flex-col justify-end mx-auto w-80 h-96 bg-neutral-800 rounded-xl p-4 gap-y-3"
     >
       <h2 className="text-3xl mb-auto justify-center mx-auto text-neutral-content">
         Login
