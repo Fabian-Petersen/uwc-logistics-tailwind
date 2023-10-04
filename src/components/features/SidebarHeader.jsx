@@ -1,5 +1,6 @@
 import icons from "../../assets/data/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import logo from "../../src/assets/images/UWC_logo.svg";
 // import { useGlobalContext } from "../../contextAPI";
 
 const SidebarHeader = () => {
@@ -14,9 +15,9 @@ const SidebarHeader = () => {
   return (
     <>
       <img
-        className="w-24 h-24 mt-2 mx-auto mb-5 fill-white "
-        src="../../src/assets/images/UWC_logo.svg"
-        alt="logo"
+        className="w-24 h-24 mt-2 mx-auto mb-5 fill-white"
+        src={logo}
+        alt="campus_logo"
       />
       <div className="flex flex-col gap-4 z-10 text-base-content items-center mb-5">
         <p className="text-base-content">Department of Transport</p>
