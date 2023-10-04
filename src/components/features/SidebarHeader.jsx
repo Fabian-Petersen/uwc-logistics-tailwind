@@ -22,7 +22,11 @@ const SidebarHeader = () => {
         <p className="text-base-content">Department of Transport</p>
       </div>
       <div className="p-4 pb-2 flex justify-between items-center">
-        <button className="sidebarBtn top-[1%] p-1" onClick={handleClick}>
+        <button
+          className="sidebarBtn top-[1%] p-1 tooltip tooltip-right"
+          onClick={handleClick}
+          data-tip="close"
+        >
           <FontAwesomeIcon icon={faChevronCircleLeft} className="w-8 h-8" />
         </button>
       </div>

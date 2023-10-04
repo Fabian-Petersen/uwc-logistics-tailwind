@@ -1,7 +1,13 @@
 // React Router Dom
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Sidebar from "./components/features/Sidebar";
 import Navbar from "./components/features/Navbar";
+import Login from "./components/authentication/Login";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -12,46 +18,38 @@ import {
   Register,
   CreateBooking,
   Return,
-  Vehicles,
   Bookings,
-  // SingleVehicle,
-  // Users,
   Maintenance,
-  // RegisterMaintenance,
-  ProtectedRoute,
-  // UserPage,
-  /* Register, */
 } from "../src/pages";
 
 const token = [];
 
+const Pages = () => {
+  const location = useLocation();
+
+  return (
+    <>
+      {/* //$ Use the location hook to not show the sidebar on the home/login page... */}
+      {location.pathname !== "/" && <Sidebar />}
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="login" element={<Login />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        {token ? <Route path="bookings" element={<Bookings />} /> : null}
+        <Route path="createbooking" element={<CreateBooking />} />
+        {token ? <Route path="maintenance" element={<Maintenance />} /> : null}
+        {token ? <Route path="return" element={<Return />} /> : null}
+        {token ? <Route path="register" element={<Register />} /> : null}
+      </Routes>
+    </>
+  );
+};
+
 const App = () => {
   return (
     <Router>
-      {/* //$ Use the location hook to not show the sidebar on the home/login page... */}
-      {window.location.pathname !== "/" && <Sidebar /> && <Navbar />}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="dashboard" element={<Dashboard />} />
-        {token ? <Route path="bookings" element={<Bookings />} /> : ""}
-        <Route path="createbooking" element={<CreateBooking />} />
-        {/* <Route path="vehicles/:vehicleId" element={<SingleVehicle />} /> */}
-        {token ? <Route path="maintenance" element={<Maintenance />} /> : ""}
-        {token ? <Route path="return" element={<Return />} /> : ""}
-        {token ? <Route path="register" element={<Register />} /> : ""}
-        {token ? (
-          <Route
-            path="vehicles"
-            element={
-              <ProtectedRoute>
-                <Vehicles />
-              </ProtectedRoute>
-            }
-          />
-        ) : (
-          ""
-        )}
-      </Routes>
+      <Pages />
       <ToastContainer
         position="top-right"
         autoClose={2500}
@@ -66,26 +64,3 @@ const App = () => {
 };
 
 export default App;
-
-{
-  /* <Toaster
-          position="top-center"
-          gutter={15}
-          containerStyle={{ margin: "8px" }}
-          toastOptions={{
-            duration: 3000,
-            success: {
-              duration: 1500,
-            },
-            error: { duration: 2000 },
-            style: {
-              fontSize: "16px",
-              maxWidth: "500px",
-              padding: "16px 24px",
-              backgroundColor: "var(--clr-bg-form)",
-              color: "var(--clr-white)",
-              textTransform: "Capitalize",
-            },
-          }}
-        /> */
-}

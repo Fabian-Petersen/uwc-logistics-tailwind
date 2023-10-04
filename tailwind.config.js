@@ -14,9 +14,6 @@ export default {
         btnLogin: "rgb(177 58 50)",
         bg_card: "#1c2534",
       },
-      backgroundImage: {
-        homePageImage: "url(src/assets/images/UWC-central-campus-entry.jpg)",
-      },
     },
   },
   plugins: [typography, daisyui],

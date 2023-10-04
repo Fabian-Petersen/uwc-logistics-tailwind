@@ -4,7 +4,7 @@
 
 :root {
   --sidebar-width: 20rem;
-  --navbar-height: 15rem;
+  --navbar-height: 4rem;
 }
 
 @layer base {
@@ -22,6 +22,10 @@
     width: var(--sidebar-width);
   }
 
+  .navbar-height {
+    height: var(--navbar-height);
+  }
+
   /* Substract the heighth of the navbar to avoid a scrollbar from apprearing in fullscreen mode. */
   .dashboard-height {
     height: calc(100vh - var(--navbar-height));
@@ -31,10 +35,6 @@
 @layer components {
   .formInput {
     @apply p-2 rounded-lg outline-none border-none focus:border-sky-500 focus:border invalid:text-red-500;
-  }
-
-  .btn {
-    @apply text-white text-xl bg-blue-500 p-2 w-full md:text-xl rounded-lg;
   }
 
   /* ! Sidebar Menu */
