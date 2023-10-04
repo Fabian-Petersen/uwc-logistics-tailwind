@@ -30,7 +30,9 @@ const Pages = () => {
   return (
     <>
       {/* //$ Use the location hook to not show the sidebar on the home/login page... */}
-      {location.pathname !== "/" && <Sidebar />}
+      {location.pathname !== "/" && location.pathname !== "/register" && (
+        <Sidebar />
+      )}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

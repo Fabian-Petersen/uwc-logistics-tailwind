@@ -43,9 +43,9 @@ const FormRowInput = ({
 FormRowInput.propTypes = {
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  placeholderText: PropTypes.string,
-  inputType: PropTypes.string.isRequired,
-  labelText: PropTypes.string,
+  placeholderText: PropTypes.string.isRequired,
+  inputType: PropTypes.string,
+  labelText: PropTypes.string.isRequired,
   className: PropTypes.string,
   defaultValues: PropTypes.string,
   register: PropTypes.func,

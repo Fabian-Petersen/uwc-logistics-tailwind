@@ -30,6 +30,27 @@
   .dashboard-height {
     height: calc(100vh - var(--navbar-height));
   }
+
+  input,
+  select {
+    @apply p-2 capitalize rounded-md;
+  }
+
+  select {
+    @apply w-full;
+  }
+
+  :is(input, select)::placeholder {
+    font-size: 0.8rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    /* styles for screens larger than or equal to 768 pixels */
+
+    :is(input, select)::placeholder {
+      font-size: 1rem;
+    }
+  }
 }
 
 @layer components {

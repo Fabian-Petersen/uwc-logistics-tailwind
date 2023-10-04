@@ -3,10 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import icons from "../../assets/data/icons";
 import { useEffect } from "react";
 import { useGlobalContext } from "../../contextAPI";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   //$ Store the user preference in the localstorage to persist the mode on page reloads.
 
@@ -25,7 +26,12 @@ const Navbar = () => {
     document.documentElement.setAttribute("data-theme", newTheme);
     setTheme(!theme);
   };
-  console.log(theme);
+
+  //$ Navigate to the Register Page.
+  const handleClick = () => {
+    navigate("/register");
+  };
+
   const { faSun, faMoon } = icons;
   return (
     <nav
@@ -49,7 +55,9 @@ const Navbar = () => {
           )}
         </span>
         {location.pathname === "/" ? (
-          <button className="btn btn-info btn-sm">Register</button>
+          <button onClick={handleClick} className="btn btn-info btn-sm">
+            Register
+          </button>
         ) : (
           <p className="relative flex items-center justify-center capitalize text-center text-primary font-semibold hover:cursor-pointer before:absolute before:border before:border-base-content before:content-[''] before:w-7 before:h-7 before:rounded-full">
             FP
