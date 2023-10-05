@@ -1,15 +1,14 @@
 import icons from "../../assets/data/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo from "../../assets/images/UWC_logo.svg";
-// import { useGlobalContext } from "../../contextAPI";
+import { useGlobalContext } from "../../contextAPI";
 
 const SidebarHeader = () => {
-  // const { openNav, setOpenNav } = useGlobalContext();
-  const { faChevronCircleLeft } = icons;
+  const { openNav, setOpenNav } = useGlobalContext();
+  const { faChevronCircleLeft, faChevronCircleRight } = icons;
 
   const handleClick = () => {
-    console.log("open");
-    // setOpenNav(!openNav);
+    setOpenNav(!openNav);
   };
 
   return (
@@ -19,22 +18,27 @@ const SidebarHeader = () => {
         src={logo}
         alt="campus_logo"
       />
-      {/* <img
-        className=" "
-        src="../../src/assets/images/UWC_logo.svg"
-        alt="logo"
-      /> */}
       <div className="flex flex-col gap-4 z-10 text-base-content items-center mb-5">
         <p className="text-base-content">Department of Transport</p>
       </div>
       <div className="p-4 pb-2 flex justify-between items-center">
-        <button
-          className="sidebarBtn top-[1%] p-1 tooltip tooltip-right"
-          onClick={handleClick}
-          data-tip="close"
-        >
-          <FontAwesomeIcon icon={faChevronCircleLeft} className="w-8 h-8" />
-        </button>
+        {openNav ? (
+          <button
+            className="sidebarBtn top-[1%] p-1 tooltip tooltip-right"
+            onClick={handleClick}
+            data-tip="open"
+          >
+            <FontAwesomeIcon icon={faChevronCircleRight} className="w-8 h-8" />
+          </button>
+        ) : (
+          <button
+            className="sidebarBtn top-[1%] p-1 tooltip tooltip-right"
+            onClick={handleClick}
+            data-tip="close"
+          >
+            <FontAwesomeIcon icon={faChevronCircleLeft} className="w-8 h-8" />
+          </button>
+        )}
       </div>
     </>
   );
