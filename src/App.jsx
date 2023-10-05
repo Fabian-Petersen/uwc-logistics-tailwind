@@ -33,7 +33,9 @@ const Pages = () => {
       {location.pathname !== "/" && location.pathname !== "/register" && (
         <Sidebar />
       )}
-      <Navbar />
+      {location.pathname !== "/" && location.pathname !== "/register" && (
+        <Navbar />
+      )}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="login" element={<Login />} />

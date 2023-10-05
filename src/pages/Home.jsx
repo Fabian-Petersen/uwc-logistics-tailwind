@@ -3,7 +3,7 @@ import Login from "../components/authentication/Login";
 const Home = () => {
   return (
     <main
-      className="w-screen bg-gray-500 bg-blend-multiply bg-cover bg-center dashboard-height"
+      className="w-screen bg-gray-500 bg-blend-multiply bg-cover bg-center h-screen"
       style={{
         backgroundImage:
           'url("./src/assets/images/UWC-central-campus-entry.jpg")',

@@ -1,6 +1,6 @@
 import FormRowInput from "../features/FormRowInput";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 // import profileImage from "../../src/assets/images/jurica-koletic.jpg";
 import profileImage from "../../assets/images/jurica-koletic.jpg";
 
@@ -39,7 +39,7 @@ const Login = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col justify-end mx-auto w-80 h-96 bg-neutral-800 rounded-xl p-4 gap-y-3"
+      className="flex flex-col justify-end mx-auto w-80 h-[26rem] bg-neutral-800 rounded-xl p-4 gap-y-3"
     >
       <h2 className="text-3xl mb-auto justify-center mx-auto text-neutral-content">
         Login
@@ -76,6 +76,10 @@ const Login = () => {
       >
         Submit
       </button>
+      <div className="flex gap-4 text-white text-xs italic">
+        <p className="hover:cursor-pointer">forgot your password</p>
+        <Link to="/register">SignUp</Link>
+      </div>
     </form>
   );
 };

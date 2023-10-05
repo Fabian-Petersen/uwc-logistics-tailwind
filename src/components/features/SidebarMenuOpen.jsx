@@ -4,9 +4,11 @@ import { navLinks } from "../../assets/data/navLinks";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 // import SidebarMenuSubLinks from "./SidebarMenuSubLinks";
 import { useState } from "react";
+import { useGlobalContext } from "../../contextAPI";
 
 const SidebarMenuOpen = () => {
   const [openSublinks, setOpenSubLinks] = useState(true);
+  const { openNav } = useGlobalContext();
 
   return (
     <ul className="left-0 flex flex-col gap-y-4 w-[90%] content-center mx-auto">
@@ -22,7 +24,10 @@ const SidebarMenuOpen = () => {
             }
             onClick={() => setOpenSubLinks(!openSublinks)}
           >
-            <span className="mr-4">
+            <span
+              className={`mr-4 ${openNav ? "" : "transition-x-[85%]"}
+                `}
+            >
               <FontAwesomeIcon className="fa-fw" icon={icon} />
             </span>
             <NavLink to={path} className="w-full">

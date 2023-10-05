@@ -1,59 +1,23 @@
-// import supabase from "../../config/supabaseClient";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import icons from "../../assets/data/icons";
-import { useEffect } from "react";
-import { useGlobalContext } from "../../contextAPI";
 import { useLocation, useNavigate } from "react-router-dom";
+import ThemeButton from "./ThemeButton";
 
 const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
-
-  //$ Store the user preference in the localstorage to persist the mode on page reloads.
-
-  const { theme, setTheme } = useGlobalContext();
-  useEffect(() => {
-    localStorage.setItem("theme", JSON.stringify(theme));
-    if (theme) {
-      document.documentElement.classList.add("dracula");
-    } else {
-      document.documentElement.classList.remove("dracula");
-    }
-  }, [theme]);
-
-  const handleTheme = () => {
-    const newTheme = theme ? "light" : "dracula";
-    document.documentElement.setAttribute("data-theme", newTheme);
-    setTheme(!theme);
-  };
+  const isHomePage = location.pathname === "/";
+  const backgroundClass = isHomePage ? "null" : "bg-base-200";
 
   //$ Navigate to the Register Page.
   const handleClick = () => {
     navigate("/register");
   };
 
-  const { faSun, faMoon } = icons;
   return (
     <nav
-      className={`flex items-center navbar-height justify-around ${
-        location.pathname === "/" ? "bg-transparent" : null
-      } ${theme && location.pathname !== "/" ? "border-b-gray-600" : null}`}
+      className={`flex items-center navbar-height justify-around ${backgroundClass}`}
     >
-      <div className="flex items-center w-40 gap-6 justify-end ml-auto mr-1 px-4 border-1 border-red-500">
-        <span
-          onClick={handleTheme}
-          className="relative flex items-center justify-center text-base-content hover:cursor-pointer before:absolute before:border before:border-base-content before:content-[''] before:w-7 before:h-7 before:rounded-full"
-        >
-          {theme ? (
-            <FontAwesomeIcon
-              className="w-3.5 h-3.5"
-              icon={faSun}
-              data-tip="light"
-            />
-          ) : (
-            <FontAwesomeIcon className="w-3.5 h-3.5" icon={faMoon} />
-          )}
-        </span>
+      <div className="flex items-center w-40 gap-6 justify-end ml-auto mr-1 px-4">
+        <ThemeButton />
         {location.pathname === "/" ? (
           <button onClick={handleClick} className="btn btn-info btn-sm">
             Register
@@ -68,3 +32,37 @@ const Navbar = () => {
   );
 };
 export default Navbar;
+
+// const NavBar = () => {
+
+//   const actionElement = isHomePage ? getRegisterButton() : getProfileIcon();
+
+//   return (
+//     <nav className={`flex items-center navbar-height justify-around ${backgroundClass}`}>
+//       <div className="flex items-center w-40 gap-6 justify-end ml-auto mr-1 px-4">
+//         {getThemeIcon()}
+//         {actionElement}
+//       </div>
+//     </nav>
+//   );
+
+//   function getRegisterButton() {
+//     return <button onClick={handleClick} className="btn btn-info btn-sm">Register</button>;
+//   }
+
+//   function getProfileIcon() {
+//     return (
+//       <p className="relative flex items-center justify-center capitalize text-center text-primary font-semibold hover:cursor-pointer before:absolute before:border before:border-base-content before:content-[''] before:w-7 before:h-7 before:rounded-full">
+//         FP
+//       </p>
+//     );
+//   }
+
+//   function getThemeIcon() {
+//     return (
+//       <span onClick={handleTheme} className="relative flex items-center justify-center text-base-content hover:cursor-pointer before:absolute before:border before:border-base-content before:content-[''] before:w-7 before:h-7 before:rounded-full">
+//         {theme ? <FontAwesomeIcon className="w-3.5 h-3.5" icon={faSun} data-tip="light" /> : <FontAwesomeIcon className="w-3.5 h-3.5" icon={faMoon} />}
+//       </span>
+//     );
+//   }
+// };
