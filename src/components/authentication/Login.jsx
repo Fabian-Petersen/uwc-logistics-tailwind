@@ -1,8 +1,7 @@
 import FormRowInput from "../features/FormRowInput";
 import { useForm } from "react-hook-form";
 import { useNavigate, Link } from "react-router-dom";
-// import profileImage from "../../src/assets/images/jurica-koletic.jpg";
-import profileImage from "../../assets/images/jurica-koletic.jpg";
+import logo from "../../assets/images/UWC_logo.svg";
 
 // import { useGlobalContext } from "../../contextAPI";
 // import supabase from "../../config/supabaseClient";
@@ -39,46 +38,47 @@ const Login = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col justify-end mx-auto w-80 h-[26rem] bg-neutral-800 rounded-xl p-4 gap-y-3"
+      className="flex flex-col w-full h-full bg-white p-4"
     >
-      <h2 className="text-3xl mb-auto justify-center mx-auto text-neutral-content">
-        Login
-      </h2>
-      <img
-        className="w-40 h-40 rounded-[50%] mx-auto border-4 border-white bg-cover bg-center"
-        src={profileImage}
-        alt="ProfileImage"
-      />
-
-      <FormRowInput
-        name="email"
-        type="email"
-        placeholderText="email"
-        inputType="input"
-        // onChange={handleChange}
-        className="bg-slate-100 text-gray-500 py-2 rounded-lg text-sm px-3 capitalize"
-        register={register}
-        errors={errors}
-      />
-      <FormRowInput
-        name="password"
-        type="password"
-        placeholderText="password"
-        inputType="input"
-        // onChange={handleChange}
-        className="bg-slate-100 text-gray-500 py-2 rounded-lg text-sm px-3 capitalize"
-        register={register}
-        errors={errors}
-      />
-      <button
-        type="submit"
-        className="btn hover:cursor-pointer hover:bg-blue-600 border-none tracking-wider text-white text-xl bg-blue-500 p-2 w-full md:text-xl rounded-lg"
-      >
-        Submit
-      </button>
-      <div className="flex gap-4 text-white text-xs italic">
-        <p className="hover:cursor-pointer">forgot your password</p>
-        <Link to="/register">SignUp</Link>
+      <img className="h-[6rem] w-[6rem] mx-auto mb-6" src={logo} alt="logo" />
+      <div className="px-8 flex flex-col h-full">
+        <h2 className="text-2xl">Login</h2>
+        <p className="text-[0.6rem] text-gray-300 mb-5 italic">
+          Login to your account
+        </p>
+        <div className="flex flex-col gap-y-1 h-[60%]">
+          <FormRowInput
+            name="email"
+            type="email"
+            inputType="input"
+            labelText="Email"
+            className="loginInput"
+            // onChange={handleChange}
+            register={register}
+            errors={errors}
+          />
+          <FormRowInput
+            name="password"
+            type="password"
+            inputType="input"
+            labelText="Password"
+            // onChange={handleChange}
+            register={register}
+            errors={errors}
+          />
+          <Link
+            to="/register"
+            className="hover:cursor-pointer text-[0.6rem] text-blue-500 my-auto"
+          >
+            Forgot your password?
+          </Link>
+          <button
+            type="submit"
+            className="bg-blue-400 my-auto text-white rounded-sm uppercase text-[0.8rem] py-1.5 hover:cursor-pointer hover:bg-blue-700 tracking-wider w-full md:text-md "
+          >
+            Submit
+          </button>
+        </div>
       </div>
     </form>
   );

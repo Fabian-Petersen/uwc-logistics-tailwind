@@ -33,15 +33,15 @@
 
   input,
   select {
-    @apply p-2 capitalize rounded-md;
+    @apply p-2 rounded-sm bg-gray-100 text-gray-300 py-1 text-sm capitalize w-full focus:border-blue-700 focus:border-2;
   }
 
-  select {
-    @apply w-full;
+  .loginInput {
+    @apply mb-3;
   }
 
-  :is(input, select)::placeholder {
-    font-size: 0.8rem;
+  label {
+    @apply text-gray-500 text-[0.6rem];
   }
 
   @media screen and (min-width: 768px) {
@@ -56,6 +56,11 @@
 @layer components {
   .formInput {
     @apply p-2 rounded-lg outline-none border-none focus:border-sky-500 focus:border invalid:text-red-500;
+  }
+
+  /* Login Page Image Overlay */
+  .overlay::before {
+    @apply absolute top-0 left-0 w-full h-full bg-black bg-opacity-100 content-[""] z-10;
   }
 
   /* ! Sidebar Menu */
