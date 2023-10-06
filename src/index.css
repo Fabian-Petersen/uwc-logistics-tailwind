@@ -14,8 +14,33 @@
     box-sizing: border-box;
   }
 
-  .main-content-size {
-    width: calc(100% - var(--sidebar-width));
+  /*$ Page Styles to be similar on all pages */
+  /* Main Section */
+  section {
+    @apply main-content-width relative ml-auto p-4;
+  }
+
+  /* Form Styles (Bookings, Returns) */
+  .formStyle {
+    @apply flex flex-col gap-2 py-2 px-4 my-10 border border-gray-100 border-opacity-50 rounded-md shadow-lg min-w-[15rem] max-w-[25rem] md:min-w-[20rem] md:max-w-[25rem] lg:max-w-[30rem] mx-auto;
+  }
+
+  /* Section  Headings */
+  .section-title {
+    @apply text-2xl font-bold text-blue-600 py-4;
+  }
+
+  /* Form Buttons */
+  .formButton {
+    @apply bg-blue-500 text-white tracking-wider btn-sm w-full rounded-sm;
+  }
+
+  .labelInputGroup {
+    @apply flex flex-col gap-2;
+  }
+
+  .main-content-width {
+    min-width: calc(100% - var(--sidebar-width));
   }
 
   .sidebarWidth {
@@ -33,7 +58,7 @@
 
   input,
   select {
-    @apply p-2 rounded-sm bg-gray-100 text-gray-300 py-1 text-sm capitalize w-full focus:border-blue-700 focus:border-2;
+    @apply p-2 rounded-[0.2rem] shadow-sm bg-gray-100 text-gray-500 py-1 text-sm capitalize w-full focus:border-blue-700 focus:border-2;
   }
 
   .loginInput {
@@ -44,20 +69,16 @@
     @apply text-gray-500 text-[0.6rem];
   }
 
+  textArea {
+    @apply shadow-sm bg-gray-100 text-gray-500 rounded-[0.2rem];
+  }
+
   @media screen and (min-width: 768px) {
     /* styles for screens larger than or equal to 768 pixels */
-
-    :is(input, select)::placeholder {
-      font-size: 1rem;
-    }
   }
 }
 
 @layer components {
-  .formInput {
-    @apply p-2 rounded-lg outline-none border-none focus:border-sky-500 focus:border invalid:text-red-500;
-  }
-
   /* Login Page Image Overlay */
   .overlay::before {
     @apply absolute top-0 left-0 w-full h-full bg-black bg-opacity-100 content-[""] z-10;

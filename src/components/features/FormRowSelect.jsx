@@ -22,7 +22,12 @@ const FormRowSelect = ({
   return (
     <div className="flex_column">
       <label>{labelText}</label>
-      <select name={name} {...register(name)} defaultValue={defaultValues}>
+      <select
+        className="text-[0.6rem] lowercase"
+        name={name}
+        {...register(name)}
+        defaultValue={defaultValues}
+      >
         <option value="blank"></option>
         {myArray.map((item, index) => {
           return <option key={index}>{item}</option>;

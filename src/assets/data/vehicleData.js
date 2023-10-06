@@ -1,4 +1,5 @@
 const vehicleData = [
+  // These values were null for the default values of the bookings form
   {
     name: "",
     model: "",

@@ -6,7 +6,7 @@ const FormRowInput = ({
   labelText,
   inputType,
   placeholderText,
-  className,
+  // className,
   defaultValues,
   register,
   errors,
@@ -20,7 +20,7 @@ const FormRowInput = ({
           name={name}
           {...register(name)}
           placeholder={placeholderText}
-          className={className}
+          className="text-[0.6rem] lowercase"
           defaultValue={defaultValues}
         />
       )) ||
@@ -43,9 +43,9 @@ const FormRowInput = ({
 FormRowInput.propTypes = {
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  placeholderText: PropTypes.string.isRequired,
+  placeholderText: PropTypes.string,
   inputType: PropTypes.string,
-  labelText: PropTypes.string.isRequired,
+  labelText: PropTypes.string,
   className: PropTypes.string,
   defaultValues: PropTypes.string,
   register: PropTypes.func,
