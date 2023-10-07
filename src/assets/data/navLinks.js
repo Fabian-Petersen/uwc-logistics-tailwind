@@ -1,7 +1,16 @@
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 import navIcons from "./icons";
-const { faClipboard, faCab, faAreaChart, faPen, faReceipt, faWrench, faUsers } =
-  navIcons;
+const {
+  faClipboard,
+  faCab,
+  faAreaChart,
+  faCalendar,
+  faPen,
+  faReceipt,
+  faWrench,
+  faUsers,
+} = navIcons;
 
 export const navLinks = [
   {
@@ -13,6 +22,12 @@ export const navLinks = [
     name: "Book Trip",
     path: "/createbooking",
     icon: faPen,
+  },
+  { name: "Calendar", path: "/calendar", icon: faCalendar },
+  {
+    name: "Bookings",
+    path: "/bookings",
+    icon: faClipboard,
   },
   {
     name: "Return",

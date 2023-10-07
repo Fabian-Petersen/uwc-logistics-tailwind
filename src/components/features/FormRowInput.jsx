@@ -6,10 +6,10 @@ const FormRowInput = ({
   labelText,
   inputType,
   placeholderText,
-  // className,
+  className,
   defaultValues,
-  register,
-  errors,
+  // register,
+  // errors,
 }) => {
   return (
     <>
@@ -18,9 +18,9 @@ const FormRowInput = ({
         <input
           type={type}
           name={name}
-          {...register(name)}
+          // {...register(name)}
           placeholder={placeholderText}
-          className="text-[0.6rem] lowercase"
+          className={`text-[0.8rem] capitalize border-none outline-none ${className}`}
           defaultValue={defaultValues}
         />
       )) ||
@@ -29,27 +29,27 @@ const FormRowInput = ({
             rows={4}
             type={type}
             name={name}
-            {...register(name)}
+            // {...register(name)}
             defaultValue={defaultValues}
           />
         ))}
-      {errors.name && errors.name?.message && (
+      {/* {errors.name && errors.name?.message && (
         <span className="form_error">{errors.name.message}</span>
-      )}
+      )} */}
     </>
   );
 };
 
 FormRowInput.propTypes = {
-  type: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  name: PropTypes.string,
   placeholderText: PropTypes.string,
   inputType: PropTypes.string,
   labelText: PropTypes.string,
   className: PropTypes.string,
   defaultValues: PropTypes.string,
-  register: PropTypes.func,
-  errors: PropTypes.object,
+  // register: PropTypes.func,
+  // errors: PropTypes.object,
 };
 
 export default FormRowInput;

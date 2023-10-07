@@ -11,7 +11,7 @@ const SidebarMenuOpen = () => {
   const { openNav } = useGlobalContext();
 
   return (
-    <ul className="left-0 flex flex-col gap-y-4 w-[90%] content-center mx-auto">
+    <ul className="left-0 flex flex-col gap-y-4 w-[85%] content-center mx-auto">
       {navLinks.map((link, index) => {
         const { name, path, icon, sublinks = [] } = link;
         return (
@@ -20,7 +20,7 @@ const SidebarMenuOpen = () => {
             className={
               window.location.pathname === path
                 ? "active p-3 flex tracking-wider"
-                : "flex p-3 tracking-wider text-xl w-full text-base-content rounded-lg hover:bg-primary hover:text-base-content d hover:pointer"
+                : "flex p-3 tracking-wider text-md md:text-lg w-full text-base-content rounded-lg hover:bg-primary hover:text-white hover:pointer"
             }
             onClick={() => setOpenSubLinks(!openSublinks)}
           >

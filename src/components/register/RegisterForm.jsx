@@ -4,20 +4,16 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import FormRowInput from "../features/FormRowInput";
 import FormRowSelect from "../features/FormRowSelect";
-import { useForm } from "react-hook-form";
 import {
   selectData,
   inputData,
 } from "../../assets/data/RegisterFormFieldsData";
 import departments from "../../assets/data/departments";
 import { useGlobalContext } from "../../contextAPI";
+import UserPool from "../../aws/UserPool";
 
 const RegisterForm = () => {
   const { registerUser, setRegisterUser } = useGlobalContext();
-  const {
-    register,
-    formState: { errors },
-  } = useForm();
 
   const navigate = useNavigate();
 
@@ -33,50 +29,23 @@ const RegisterForm = () => {
     console.log(registerUser);
   };
 
-  //$  ============================ Register New User ========================== //
-
-  // const { mutate } = useMutation(
-  //   async (newUser) => {
-  //     // console.log(newUser);
-  //     const { data, error } = await supabase.auth.signUp({
-  //       email: newUser.email,
-  //       password: newUser.password,
-  //       options: {
-  //         data: { ...newUser },
-  //       },
-  //     });
-
-  //     if (error) {
-  //       toast.error("Error Registering user, contact administrator");
-  //       console.log(error.message);
-  //     }
-
-  //     return data;
-  //   },
-  //   {
-  //     onSuccess: (data) => {
-  //       if (data.user && data.session !== null) {
-  //         toast.success("Registration Successfull, Please Login");
-  //         navigate("/");
-  //         setRegisterUser("");
-  //         console.log(data);
-  //       }
-  //     },
-  //     onError: (error) => {
-  //       console.error("Mutation failed:", error);
-  //     },
-  //   }
-  // );
+  //$  ============================ Register New User with AWS Cognito ========================== //
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    toast.success("Successfully Registered, Please Login....");
-    setRegisterUser(register);
-    // mutate(registerUser);
-    navigate("/");
-  };
+    setRegisterUser(registerUser);
+    const { email, password } = registerUser;
 
-  //   useQuery({ queryKey: ["newUser"], queryFn: registerUser });
+    UserPool.signUp(email, password, [], null, (error, data) => {
+      console.log(data);
+      if (error) {
+        console.error(error);
+        toast.error("Error Registering Account, Contact Administrator");
+      }
+      toast.success("Successfully Registered, Please Login....");
+      navigate("/");
+    });
+  };
 
   <select name="department" onChange={handleChange}>
     <option value="" defaultValue={""}>
@@ -102,8 +71,6 @@ const RegisterForm = () => {
             placeholderText={item.placeholderText}
             myArray={item.options}
             onChange={handleChange}
-            register={register}
-            errors={errors}
           />
         );
       })}
@@ -116,8 +83,6 @@ const RegisterForm = () => {
             name={item.name}
             placeholderText={item.placeholderText}
             onChange={handleChange}
-            register={register}
-            errors={errors}
           />
         );
       })}

@@ -11,6 +11,7 @@ export default {
         primary: "#0079ff",
         bg_dark: "#1c274b",
         bg_light: "#f3f4f5",
+        bg_linkedIn: "#f4f2ee",
         textDark: "#2b2a4c",
         btnLogin: "rgb(177 58 50)",
         bg_card: "#1c2534",

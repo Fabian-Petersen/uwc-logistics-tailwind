@@ -3,10 +3,16 @@ import departments from "../../assets/data/departments";
 const inputData = [
   {
     inputType: "input",
+    type: "text",
     name: "name",
     placeholderText: "name",
   },
-  { inputType: "input", name: "surname", placeholderText: "surname" },
+  {
+    inputType: "input",
+    type: "text",
+    name: "surname",
+    placeholderText: "surname",
+  },
   {
     inputType: "input",
     type: "email",

@@ -10,10 +10,13 @@ import ProtectedRoute from "./ProtectedRoute";
 import Maintenance from "./Maintenance";
 import RegisterMaintenance from "./RegisterMaintenance";
 import UserPage from "./UserPage";
+import ResetPassword from "./ResetPassword";
+import Calender from "./Calender";
 
 export {
   Home,
   Register,
+  Calender,
   Dashboard,
   CreateBooking,
   Return,
@@ -24,4 +27,5 @@ export {
   Maintenance,
   RegisterMaintenance,
   UserPage,
+  ResetPassword,
 };

@@ -1,17 +1,19 @@
 // import VehiclesTable from "../components/vehicles/VehiclesTable";
-// import { useGlobalContext } from "../contextAPI";
+import { useGlobalContext } from "../contextAPI";
 // import CreateVehicleModalMulti from "../components/vehicles/CreateVehicleModalMulti";
 
 const Vehicles = () => {
-  // const { openVehicleModal } = useGlobalContext();
-  const openVehicleModal = false;
+  const { openVehicleModal } = useGlobalContext();
+
   return (
-    // {openVehicleModal ? <CreateVehicleModalMulti /> : ""}
-    <main className={openVehicleModal ? "openModal" : "section_global"}>
-      {/* <h1 className={openVehicleModal ? "openModal" : "section_title_global"}>
+    <main className="border border-red-500">
+      {/* {openVehicleModal ? <CreateVehicleModalMulti /> : ""} */}
+      <h1 className={openVehicleModal ? "openModal" : "section-title"}>
         Vehicles
-      </h1> */}
-      {/* <VehiclesTable /> */}
+      </h1>
+      <section className={openVehicleModal ? "openModal" : "section_global"}>
+        {/* <VehiclesTable /> */}
+      </section>
     </main>
   );
 };

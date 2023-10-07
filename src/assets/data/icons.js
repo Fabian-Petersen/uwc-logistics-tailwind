@@ -19,6 +19,7 @@ import {
   faWarning,
   faSun,
   faMoon,
+  faCalendar,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const icons = {
@@ -42,6 +43,7 @@ export const icons = {
   faWarning,
   faSun,
   faMoon,
+  faCalendar,
 };
 
 export default icons;

@@ -7,10 +7,10 @@ const Sidebar = () => {
   const { theme, openNav } = useGlobalContext();
 
   return (
-    <aside className="h-screen w-80 fixed">
+    <aside className="h-screen w-[15rem] md:w-[20rem] fixed">
       <nav
         className={`h-full absolute top-0 left-0 flex flex-col bg-base-200 shadow-sm w-full z-50 ${
-          openNav ? "transition-all duration-500 linear -translate-x-[85%]" : ""
+          openNav ? "transition-all duration-500 linear -translate-x-[80%]" : ""
         }`}
       >
         <SidebarHeader />

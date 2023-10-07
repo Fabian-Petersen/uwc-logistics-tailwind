@@ -15,13 +15,14 @@ const AppProvider = ({ children }) => {
 
   //$ 3. ====== Register Component - State of the user on initial registration set to null ====== //
   const [registerUser, setRegisterUser] = useState({
-    name: "James",
-    surname: "Roberts",
-    role: "staff",
+    name: "Fabian",
+    surname: "Petersen",
+    // role: "staff",
     department: "Campus Protection Services",
-    id: "Staff3459",
-    email: "test10@gmail.com",
-    password: "Testing1234",
+    staff_student_id: "Staff3459",
+    email: "c2ktech100@gmail.com",
+    // Password Requirements : 8 character(s) minimum (1 number, 1 uppercase, 1 lowercase, 1 special)
+    password: "Testing@123",
   });
 
   //$ 4. ====== Register Component - State of the user on initial registration set to null   ====== //
@@ -38,8 +39,8 @@ const AppProvider = ({ children }) => {
 
   //$ 7. ====== Login Component - State updated from the login component using the data entered by the user   ====== //
   const [userData, setUserData] = useState({
-    email: "test11@gmail.com",
-    password: "Testing1234",
+    email: "c2ktech100@gmail.com",
+    password: "Testing@123",
   });
 
   //$ 8. ====== Fetch the vehicles data from supabase stored in the vehicles table ====== //
@@ -63,7 +64,7 @@ const AppProvider = ({ children }) => {
   }
 
   //$ 10. ====== State to open and close the sidebar  ====== //
-  const [openNav, setOpenNav] = useState(false);
+  const [openNav, setOpenNav] = useState(true);
 
   //$ 11. ====== Return Component - State to show availability of the vehicle ====== //
   const [status, setStatus] = useState("");

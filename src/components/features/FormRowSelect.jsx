@@ -7,8 +7,8 @@ const FormRowSelect = ({
   labelText,
   defaultValues,
   // itemSelected,
-  register,
-  errors,
+  // register,
+  // errors,
 }) => {
   // const [registrationOptions, setRegistrationOptions] = useState([]);
 
@@ -25,7 +25,7 @@ const FormRowSelect = ({
       <select
         className="text-[0.6rem] lowercase"
         name={name}
-        {...register(name)}
+        // {...register(name)}
         defaultValue={defaultValues}
       >
         <option value="blank"></option>
@@ -33,9 +33,9 @@ const FormRowSelect = ({
           return <option key={index}>{item}</option>;
         })}
       </select>
-      {errors.name && errors.name?.message && (
+      {/* {errors.name && errors.name?.message && (
         <span className="form_error">{errors.name.message}</span>
-      )}
+      )} */}
     </div>
   );
 };
@@ -48,6 +48,6 @@ FormRowSelect.propTypes = {
   labelText: PropTypes.string,
   defaultValues: PropTypes.string,
   itemSelected: PropTypes.string,
-  register: PropTypes.func,
-  errors: PropTypes.object,
+  // register: PropTypes.func,
+  // errors: PropTypes.object,
 };

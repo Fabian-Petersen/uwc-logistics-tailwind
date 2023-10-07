@@ -3,11 +3,12 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import AppProvider from "./contextAPI.jsx";
 import "./index.css";
+import React from "react";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  // <React.StrictMode>
-  <AppProvider>
-    <App />
-  </AppProvider>
-  // </React.StrictMode>
+  <React.StrictMode>
+    <AppProvider>
+      <App />
+    </AppProvider>
+  </React.StrictMode>
 );
