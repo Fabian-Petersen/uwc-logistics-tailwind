@@ -9,7 +9,6 @@ const {
   faPen,
   faReceipt,
   faWrench,
-  faUsers,
 } = navIcons;
 
 export const navLinks = [
@@ -25,7 +24,7 @@ export const navLinks = [
   },
   { name: "Calendar", path: "/calendar", icon: faCalendar },
   {
-    name: "Bookings",
+    name: "My Bookings",
     path: "/bookings",
     icon: faClipboard,
   },
@@ -47,19 +46,28 @@ export const navLinks = [
       { name: "View Maintenance", path: "/maintenance", icon: faWrench },
     ],
   },
+  // {
+  //   name: "Vehicles",
+  //   path: "/vehicles",
+  //   icon: faCab,
+
+  //   sublinks: [
+  //     {
+  //       name: "Create New Vehicle",
+  //       path: "/create_new_vehicle",
+  //       icon: faPen,
+  //     },
+  //     { name: "List of Vehicles", path: "/vehicle_list", icon: faClipboard },
+  //   ],
+  // },
   {
-    name: "Vehicles",
-    path: "/vehicles",
+    name: "List of Vehicles",
+    path: "/vehicles_list",
     icon: faCab,
   },
   {
-    name: "Users",
-    path: "/users",
-    icon: faUsers,
-  },
-  {
-    name: "My Bookings",
-    path: "/bookings",
-    icon: faClipboard,
+    name: "New Vehicle",
+    path: "/create_new_vehicle",
+    icon: faPen,
   },
 ];

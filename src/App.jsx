@@ -20,9 +20,10 @@ import {
   Return,
   Bookings,
   Maintenance,
-  Vehicles,
+  VehicleList,
   ResetPassword,
   Calender,
+  CreateNewVehicle,
 } from "../src/pages";
 
 const token = [];
@@ -52,7 +53,8 @@ const Pages = () => {
         {token ? <Route path="return" element={<Return />} /> : null}
         {token ? <Route path="register" element={<Register />} /> : null}
         {<Route path="reset_password" element={<ResetPassword />} />}
-        <Route path="vehicles" element={<Vehicles />} />
+        <Route path="vehicles_list" element={<VehicleList />} />
+        <Route path="create_new_vehicle" element={<CreateNewVehicle />}></Route>
       </Routes>
     </>
   );

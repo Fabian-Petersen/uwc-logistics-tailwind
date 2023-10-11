@@ -1,14 +1,15 @@
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import bookingData from "../../assets/data/bookingMockData";
-import { bookingTableColumns } from "../../assets/data/TableColumns";
+import vehiclesMockData from "../../assets/data/vehiclesMockData";
+import { vehicleTableColumns } from "../../assets/data/TableColumns";
 
-const BookingTable = () => {
+const VehiclesTable = () => {
   return (
     <div className="tableHeader md:w-[70rem] md:mx-auto h-[90%]">
-      <header className="section-title">Booking Information</header>
+      <header className="section-title">List of Vehicles</header>
+
       <DataGrid
-        rows={bookingData}
-        columns={bookingTableColumns}
+        rows={vehiclesMockData}
+        columns={vehicleTableColumns}
         initialState={{
           pagination: { paginationModel: { pageSize: 10 } },
         }}
@@ -24,4 +25,4 @@ const BookingTable = () => {
   );
 };
 
-export default BookingTable;
+export default VehiclesTable;

@@ -3,7 +3,7 @@ import Register from "./Register";
 import Dashboard from "./Dashboard";
 import CreateBooking from "./CreateBooking";
 import Return from "./Return";
-import Vehicles from "./Vehicles";
+import VehicleList from "./VehicleList";
 import Bookings from "./Bookings";
 import Users from "./Users";
 import ProtectedRoute from "./ProtectedRoute";
@@ -12,6 +12,7 @@ import RegisterMaintenance from "./RegisterMaintenance";
 import UserPage from "./UserPage";
 import ResetPassword from "./ResetPassword";
 import Calender from "./Calender";
+import CreateNewVehicle from "./CreateNewVehicle";
 
 export {
   Home,
@@ -20,7 +21,7 @@ export {
   Dashboard,
   CreateBooking,
   Return,
-  Vehicles,
+  // Vehicles,
   Bookings,
   Users,
   ProtectedRoute,
@@ -28,4 +29,6 @@ export {
   RegisterMaintenance,
   UserPage,
   ResetPassword,
+  CreateNewVehicle,
+  VehicleList,
 };

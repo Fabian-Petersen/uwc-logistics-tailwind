@@ -8,7 +8,6 @@ import {
   selectData,
   inputData,
 } from "../../assets/data/RegisterFormFieldsData";
-import departments from "../../assets/data/departments";
 import { useGlobalContext } from "../../contextAPI";
 import UserPool from "../../aws/UserPool";
 
@@ -47,21 +46,21 @@ const RegisterForm = () => {
     });
   };
 
-  <select name="department" onChange={handleChange}>
-    <option value="" defaultValue={""}>
-      Select Department
-    </option>
-    {departments.map((item, index) => {
-      return <option key={index}>{item}</option>;
-    })}
-  </select>;
+  // async (newUser) => {
+  //   // console.log(newUser);
+  //   const { data, error } = await supabase.auth.signUp({
+  //     email: newUser.email,
+  //     password: newUser.password,
+  //     options: {
+  //       data: { ...newUser },
+  //     },
+  //   });
 
   return (
-    <form className="flex flex-col justify-center gap-4 xl:gap-6 sm:w-[75%] lg:w-[60%] xl:w-[45%] max-w-7xl bg-base-content p-6 rounded-xl">
-      <h2 className="text-3xl xl:text-4xl text-base-100 uppercase my-2 mx-auto tracking-wider">
-        Register
-      </h2>
-
+    <form className="grid grid-cols-1 w-full h-full bg-blue p-4 md:px-6">
+      <div className="flex flex-col gap-2 h-full w-full md:justify-center">
+        <h1 className="section-title text-xl mb-0 py-2">Register Account</h1>
+      </div>
       {/* //$Map through the data for the select fields in the form */}
       {selectData.map((item, index) => {
         return (
@@ -87,7 +86,7 @@ const RegisterForm = () => {
         );
       })}
       <button
-        className="btn btn-primary text-primary-content hover:cursor-pointer tracking-wider"
+        className="bg-blue-500 my-auto text-white rounded-sm uppercase text-[0.8rem] py-1.5 hover:cursor-pointer hover:bg-blue-700 tracking-wider w-full md:text-md"
         type="submit"
         onClick={handleSubmit}
       >

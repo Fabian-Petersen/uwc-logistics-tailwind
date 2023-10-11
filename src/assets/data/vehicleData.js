@@ -21,4 +21,8 @@ export const vehicleLabels = [
   },
 ];
 
+export const fuel = ["petrol", "diesel"];
+
+export const transmission = ["manual", "automatic"];
+
 export default vehicleData;

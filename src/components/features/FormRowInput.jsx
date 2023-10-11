@@ -12,7 +12,7 @@ const FormRowInput = ({
   // errors,
 }) => {
   return (
-    <>
+    <div className="flex flex-col gap-2">
       {labelText ? <label>{labelText}</label> : ""}
       {(inputType === "input" && (
         <input
@@ -20,7 +20,7 @@ const FormRowInput = ({
           name={name}
           // {...register(name)}
           placeholder={placeholderText}
-          className={`text-[0.8rem] capitalize border-none outline-none ${className}`}
+          className={`text-[0.8rem] outline-none text-gray-500 ${className} lowercase tracking-wider focus:border-red-500 focus:border`}
           defaultValue={defaultValues}
         />
       )) ||
@@ -36,7 +36,7 @@ const FormRowInput = ({
       {/* {errors.name && errors.name?.message && (
         <span className="form_error">{errors.name.message}</span>
       )} */}
-    </>
+    </div>
   );
 };
 

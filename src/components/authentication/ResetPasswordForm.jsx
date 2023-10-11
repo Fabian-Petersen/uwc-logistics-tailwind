@@ -23,20 +23,20 @@ const ResetPasswordForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    navigate("/login");
+    navigate("/");
     toast.success("Success, Email Verification Sent");
   };
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="grid grid-cols-1 w-full h-full bg-blue p-4 "
+      className="grid grid-cols-1 w-full h-full bg-blue p-4 md:px-6"
     >
-      <div className="flex flex-col gap-2 h-full w-full justify-center">
+      <div className="flex flex-col gap-2 h-full w-full md:justify-center">
         <h1 className="section-title text-xl mb-0 py-2">
           Forgot your Password?
         </h1>
-        <p className="text-sm mb-6">
+        <p className="text-sm mb-6 md:text-xs md:leading-4 text-gray-300">
           Kindly enter the email address tied to your account, we will assist
           top reset your password
         </p>
@@ -47,7 +47,7 @@ const ResetPasswordForm = () => {
             inputType="input"
             placeholderText="Enter Email Address"
             onChange={handleChange}
-            className={"py-2"}
+            className={"py-2 text-gray-500 lowercase"}
           />
           <button
             type="submit"

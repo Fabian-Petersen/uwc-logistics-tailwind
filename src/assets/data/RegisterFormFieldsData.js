@@ -32,12 +32,14 @@ const selectData = [
   {
     name: "role",
     options: ["staff", "student", "manager"],
-    placeholderText: "select role",
+    placeholderText: "select Role",
+    defaultValues: "",
   },
   {
     name: "department",
     options: departments,
-    placeholderText: "select department",
+    placeholderText: "select Department",
+    defaultValues: "",
   },
 ];
 
