@@ -8,11 +8,11 @@ const CardContainer = () => {
   // const { data: vehicles } = useVehiclesQuery();
 
   return (
-    <div className="flex flex-col p-4 gap-6 flex-wrap md:flex-row md:flex md:gap-4 md:justify-around border border-blue-500 w-auto mx-auto md:w-[90%]">
+    <div className="flex flex-col w-full gap-4 flex-wrap md:flex-row md:gap-2">
       {cardData.map((card, index) => {
         const { name, stat, icon } = card;
         return (
-          <div key={index} className="card flex-grow-0">
+          <div key={index} className="card">
             <span className="flex justify-center items-center relative before:content-[''] before:p-4 before:absolute before:w-12 before:h-12 before:rounded-full before:border-2 before:border-base-content">
               <FontAwesomeIcon className="w-6 h-6" icon={icon} />
             </span>

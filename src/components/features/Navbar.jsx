@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`flex items-center justify-end navbar-height ${backgroundClass}`}
+      className={`col-start-2 col-end-3 row-start-1 row-end-2 flex items-center justify-end navbar-height ${backgroundClass}`}
     >
       <Status />
       <div className="flex items-center w-50 gap-6 justify-end px-4">

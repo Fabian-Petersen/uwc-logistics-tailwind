@@ -19,8 +19,8 @@ const SidebarMenuOpen = () => {
             key={index}
             className={
               window.location.pathname === path
-                ? "active p-3 flex tracking-wider"
-                : "flex p-3 tracking-wider text-md md:text-lg w-full text-base-content rounded-lg hover:bg-primary hover:text-white hover:pointer"
+                ? "active p-2 md:p-2.5 flex tracking-wider"
+                : "flex p-2 md:p-2.5 tracking-wider text-md md:text-lg w-full text-base-content rounded-lg hover:bg-primary hover:px-2 hover:text-white hover:pointer"
             }
             onClick={() => setOpenSubLinks(!openSublinks)}
           >

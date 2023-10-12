@@ -64,7 +64,7 @@ const AppProvider = ({ children }) => {
   }
 
   //$ 10. ====== State to open and close the sidebar  ====== //
-  const [openNav, setOpenNav] = useState(true);
+  const [navOpen, setNavOpen] = useState(false);
 
   //$ 11. ====== Return Component - State to show availability of the vehicle ====== //
   const [status, setStatus] = useState("");
@@ -156,8 +156,8 @@ const AppProvider = ({ children }) => {
         setUserData,
         token,
         setToken,
-        openNav,
-        setOpenNav,
+        navOpen,
+        setNavOpen,
         createNewBooking,
         setCreateNewBooking,
         status,

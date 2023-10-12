@@ -20,14 +20,6 @@ export default {
       },
     },
   },
-  // use PurgeCSS to remove unused styles from the final CSS build
-  purge: {
-    content: [
-      "./src/pages/**/*.{js,jsx,ts,tsx}",
-      "./src/components/**/*.{js,jsx,ts,tsx}",
-    ],
-    // These options are passed through directly to PurgeCSS
-  },
   plugins: [typography, daisyui],
   daisyui: {
     themes: ["light", "dracula"],

@@ -2,24 +2,25 @@ import SidebarMenuOpen from "./SidebarMenuOpen";
 import SidebarUserDetails from "./SidebarUserDetails";
 import SidebarHeader from "./SidebarHeader";
 import { useGlobalContext } from "../../contextAPI";
+import propTypes from "prop-types";
 
-const Sidebar = () => {
-  const { theme, openNav } = useGlobalContext();
+const Sidebar = ({ navOpen }) => {
+  const { theme } = useGlobalContext();
 
   return (
     <aside
-      className={`h-screen w-[15rem] md:w-[20rem] fixed ${
-        openNav ? "z-0" : "z-10"
-      }`}
+      className={`col-start-1 col-end-2 h-screen ${navOpen ? "z-0" : "z-10"}`}
     >
       <nav
-        className={`h-full absolute top-0 left-0 flex flex-col bg-base-200 shadow-sm w-full z-50 ${
-          openNav ? "transition-all duration-500 linear -translate-x-[80%]" : ""
+        className={`h-full flex flex-col bg-base-200 shadow-sm w-full z-50 ${
+          navOpen
+            ? "openSidebar transition-all duration-500 linear -translate-x-[80%]"
+            : "closeSidebar transition-all duration-500 linear translate-x-0"
         }`}
       >
         <SidebarHeader />
         <hr
-          className={`w-[95%] text-gray-600 opacity-80 mx-auto mb-4
+          className={`w-[95%] text-gray-600 opacity-80 mx-auto mb-2
             ${theme ? "opacity-20" : "opacity-90"}`}
         />
         <SidebarMenuOpen />
@@ -35,3 +36,5 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
+Sidebar.propTypes = { navOpen: propTypes.bool, setNavOpen: propTypes.func };
