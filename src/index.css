@@ -95,8 +95,14 @@
 
   /* Dashboard Card Container Styles  */
 
-  .card {
-    @apply relative flex flex-col justify-evenly items-center shadow-lg mx-auto w-[15rem] h-[8rem] p-4 text-base-content outline-none border-none rounded-md bg-base-200;
+  .card-container {
+    @apply border border-red-500 grid grid-cols-1 gap-4 p-4;
+    @apply md:grid-cols-[repeat(auto-fill,minmax(13rem,1fr))] md:justify-items-center;
+    @apply lg:gap-4;
+  }
+
+  .card-contents {
+    @apply relative flex flex-col justify-evenly gap-4 items-center shadow-lg mx-auto w-[13rem] h-[8rem] p-4 md:p-0 text-base-content outline-none border-none rounded-md bg-base-200;
   }
 
   /* Table Header and Footer Color */
