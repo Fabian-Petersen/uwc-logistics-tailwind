@@ -8,7 +8,7 @@ const CardContainer = () => {
   // const { data: vehicles } = useVehiclesQuery();
 
   return (
-    <div className="card-container ">
+    <div className="card-container row-start-1 row-end-2 col-span-2">
       {cardData.map((card, index) => {
         const { name, stat, icon } = card;
         return (

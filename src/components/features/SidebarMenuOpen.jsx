@@ -8,10 +8,10 @@ import { useGlobalContext } from "../../contextAPI";
 
 const SidebarMenuOpen = () => {
   const [openSublinks, setOpenSubLinks] = useState(true);
-  const { openNav } = useGlobalContext();
+  const { navOpen } = useGlobalContext();
 
   return (
-    <ul className="left-0 flex flex-col gap-y-4 w-[85%] content-center mx-auto">
+    <ul className="h-full left-0 justify-evenly flex flex-col gap-y-10 md:gap-y-2 w-[85%] content-center mx-auto">
       {navLinks.map((link, index) => {
         const { name, path, icon, sublinks = [] } = link;
         return (
@@ -20,12 +20,12 @@ const SidebarMenuOpen = () => {
             className={
               window.location.pathname === path
                 ? "active p-2 md:p-2.5 flex tracking-wider"
-                : "flex p-2 md:p-2.5 tracking-wider text-md md:text-lg w-full text-base-content rounded-lg hover:bg-primary hover:px-2 hover:text-white hover:pointer"
+                : "flex p-2 md:p-2.5 tracking-wider text-md md:text-lg lg:py-3.5 w-full text-base-content rounded-lg hover:bg-primary hover:px-2 hover:text-white hover:pointer"
             }
             onClick={() => setOpenSubLinks(!openSublinks)}
           >
             <span
-              className={`mr-4 ${openNav ? "" : "transition-x-[85%]"}
+              className={`mr-4 ${navOpen ? "" : "transition-x-[85%]"}
                 `}
             >
               <FontAwesomeIcon className="fa-fw" icon={icon} />

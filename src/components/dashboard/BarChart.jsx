@@ -58,7 +58,7 @@ const BarChartDash = () => {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <BarChart
-        width={730}
+        width={500}
         height={250}
         data={data}
         margin={{ top: 5, border: "0.5px solid lightgray" }}

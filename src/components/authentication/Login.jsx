@@ -78,7 +78,7 @@ const Login = () => {
           />
           <Link
             to="/reset_password"
-            className="hover:cursor-pointer text-[0.6rem] text-blue-500 my-auto"
+            className="hover:cursor-pointer text-[0.6rem] text-blue-500 my-2"
           >
             Forgot your password?
           </Link>
@@ -90,7 +90,7 @@ const Login = () => {
           </button>
           <Link
             to="/register"
-            className="hover:cursor-pointer text-[0.6rem] text-blue-500 my-auto italic"
+            className="hover:cursor-pointer text-[0.6rem] text-blue-500 italic my-2"
           >
             Create New Account?
           </Link>
